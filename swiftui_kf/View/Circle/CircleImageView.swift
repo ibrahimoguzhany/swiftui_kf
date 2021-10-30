@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct CircleImageView: View {
     let title: String
@@ -13,12 +14,16 @@ struct CircleImageView: View {
     
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            KFImage(URL(string: imageUrl)).fade(duration: 2).resizable().clipShape(Circle()).shadow(radius: 50)
+            Text(title).bold().italic()
+        }
     }
 }
 
 struct CircleImageView_Previews: PreviewProvider {
     static var previews: some View {
-        CircleImageView(title: "asdasd",imageUrl: "DASDSA").fixedSize()
+        CircleImageView(title: "asdasd",imageUrl: "https://picsum.photos/id/237/200/300").frame(width: 400, height: 400 , alignment: .center)
+        
     }
 }

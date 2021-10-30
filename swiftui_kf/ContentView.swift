@@ -17,7 +17,7 @@ struct IconFieldView: View {
     
     var body: some View {
         VStack {
-            TextField("Placeholder", text: $textFieldValue)
+            TextField("Placeholder", text: $textFieldValue)		
             Text(textFieldValue).bold().font(/*@START_MENU_TOKEN@*/.largeTitle/*@END_MENU_TOKEN@*/)
             
             
@@ -31,10 +31,7 @@ struct ContentView: View {
     private let imageUrl: String = "https://picsum.photos/id/237/200/300"
     
     var body: some View {
-        VStack {
-            KFImage(URL(string: imageUrl)).fade(duration: 2).resizable().frame(width: 300, height: 300, alignment: .center).clipShape(Circle()).shadow(radius: 50)
-            Text("Kabus")
-        }
+        CircleImageView(title: "Kabus", imageUrl: "https://picsum.photos/id/237/200/300").frame(width: 400, height: 400, alignment: .center)
        
     }
     
